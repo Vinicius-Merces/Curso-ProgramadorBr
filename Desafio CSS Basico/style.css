@@ -1,5 +1,13 @@
+body{
+    padding-top: 150px;
+    background-color: black;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 25px;
 }
 
 li{
@@ -9,23 +17,24 @@ li{
     padding: 3px;
     list-style: inside;
     height: 30px;
-    width: 300px;
+    width: 220px;
 
 }
 
 .cartao {
-
+    margin: auto;
     background-image: url(./images/backgorund.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 400px;
     height: 200px;
+    
 
 }
 
 .lista {
 
-    width: 200px;
+    width: 150px;
     padding-top: 10px;
 
 }
