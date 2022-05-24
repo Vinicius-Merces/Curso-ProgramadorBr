@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+header{
+    background-color: #48c5ce;
+    text-align: center;
+    color: white;
+    padding: 10px;
+
+}
+
+.tittle{
+    font-size: 26px;
+
+}
+
+section{
+    padding: 20px;
+    background-image: url(../images/people.jpg);
+    background-size: cover;
+    overflow: hidden;
+    /* overflow hidden necessário para exibir a imagem correta no background */
+}
+
+.formcontainer{
+    max-width: 230px;
+    max-height: 460px;
+    background-color: #ffffffbb;
+    padding: 20px;
+    float: right;
+
+}
+
+h2{
+    font-size: 16px;
+}
+
+.mb{
+    margin-bottom: 15px;
+}
+
+input, select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* comando usado para dar forma apenas aos input's do tipo submit */
+input[type="submit"]{
+    color: white;
+    background-color: #48c5ce;
+    font-weight: bold;
+}
+
+select{
+    /* appearance usados para tirar a seta do seletor de cidade e evitar erros nos navegadores */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* essa parte é para o posicionamento da seta no seletor de cidade */
+    background-image: url(../images/arrow.jpg);
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+    /* poderia tambem usar como "background-position: calc(100% - 10px) center;" */
+}
