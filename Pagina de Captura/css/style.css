@@ -125,6 +125,8 @@ footer{
     }
     .description {
         width: 200px;
-        text-align: left;         
-    }
+        text-align: left;  
+        position: relative;
+        left: 5px;       
+}
 }
