@@ -66,6 +66,11 @@ input[type="submit"]{
     color: white;
     background-color: #48c5ce;
     font-weight: bold;
+    margin-bottom: 0px;
+}
+.imput1{
+    width: 100%;
+    box-sizing: border-box;
 }
 
 select{
