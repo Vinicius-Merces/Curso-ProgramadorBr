@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* navbar do site */
+.navbar{
+    width: 100%;
+    color: white;
+    background-color: rgb(243, 243, 243);
+    position: relative;
+    overflow: hidden;
+    height: 80px;
+}
+
+.navbar ul {
+    position: absolute;
+    padding-top: 20px;
+    right: 10%;
+
+
+
+}
+
+.navbar li {
+    list-style: none;
+    display: inline-block;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    padding: 10px;
+    list-style: inside;
+
+}
+
+.logo{
+float: left;
+background-size: 160px 80px;
+background-size: cover;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(245, 141, 6);
+}
+/* navbar do site */
+
+/* imagem do topo */
+.imagetitle{
+    max-width: 1100px;
+    height: 500px;
+    background-image: url(../images/modelo\ de\ lado.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: auto;
+    position: relative;
+}
+
+.imagetitle h1{
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    color: rgb(253, 122, 0);
+
+
+}
+
+.imagetitle p{
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 20px;
+    color: rgb(253, 122, 0);
+
+}
+
+h1 {
+    padding-top: 32%;
+    padding-left: 15%;
+}
+
+.text{
+    padding-left: 15%;
+}
+
+/* imagem e texto do topo */
+
+/* sobre nós */
+
+.aboutus{
+    max-width: 1100px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    margin-top: 5px;
+}
+
+.txtabout{
+    width: 50%;
+    height: 250px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.aboutus h2, .aboutus h3, .aboutus p{
+    font-family: 'Domine', serif;
+    padding-top: 10px;
+}
+ 
+.aboutus h2{
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+
+.aboutus h3{
+    font-size: 15px;
+    padding-bottom: 5px;
+    color: rgb(253, 122, 0);
+}
+
+.aboutus p{
+
+}
+
+.imgabout{
+    background-image: url(../images/itens.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+    width: 50%;
+    height: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;   
+}
+
+/* sobre nos */
+
+/* div com fotos cabelo e unha */
+
+.imgworks{
+    width: 1100px;
+    height: 320px;
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Domine', serif;
+
+    
+}
+
+.imgworks a{
+    text-decoration: none;
+}
+
+.imgworks ul{
+   list-style: none;
+   text-decoration: none;
+   
+}
+
+.imgworks li{
+    display: inline-block;
+    width: 50%;
+    height: 300px;
+    text-align: center;
+    margin-top: 5px;    
+
+}
+
+.cabelo{
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-image: url(../images/cabelo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.cabelo div, .unhas div{
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+.unhas{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background-image: url(../images/unhas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.fade{
+    background-color: rgba(0, 0, 0, 0.041);
+    max-width: 1100px;
+    margin: auto;
+}
+
