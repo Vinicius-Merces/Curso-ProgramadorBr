@@ -13,7 +13,7 @@
     height: 80px;
 }
 
-.navbar ul {
+.navbar ul{
     position: absolute;
     padding-top: 20px;
     right: 10%;
@@ -22,7 +22,7 @@
 
 }
 
-.navbar li {
+.navbar li{
     list-style: none;
     display: inline-block;
     font-family: 'Lobster', cursive;
@@ -56,23 +56,26 @@ background-size: cover;
 }
 
 .imagetitle h1{
-    font-family: 'Lobster', cursive;
+    font-family: 'Indie Flower', cursive;
     font-size: 40px;
     color: rgb(253, 122, 0);
+    background-color: rgba(0, 0, 0, 0.158);
 
 
 }
 
 .imagetitle p{
     font-family: 'Baloo Tammudu 2', cursive;
+    padding-bottom: 85px;
     font-size: 20px;
     color: rgb(253, 122, 0);
+    background-color: rgba(0, 0, 0, 0.158);
 
 }
 
 h1 {
-    padding-top: 32%;
-    padding-left: 15%;
+    padding-top: 28%;
+    padding-left: 16%;
 }
 
 .text{
@@ -149,7 +152,7 @@ h1 {
 }
 
 .imgworks ul{
-   list-style: none;
+    list-style: none;
    text-decoration: none;
    
 }
@@ -196,3 +199,93 @@ h1 {
     margin: auto;
 }
 
+/* footer */
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 5px;
+    font-family: 'Domine', serif;
+    font-weight: bold;
+    position: relative;
+
+}
+
+footer p{
+    font-size: 25px;
+    color: rgb(253, 122, 0);
+    padding-top: 10px;
+    text-align: center;
+}
+
+footer ul{
+    padding: 5px;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    font-size: 16px;
+    
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+footer li{ 
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    padding: 3px;
+    list-style: inside;
+    
+    
+}
+
+.tel, .social{
+    margin-left: 40px;
+}
+
+.location{
+    list-style-image: url('../images/marcador-de-localizacao\ 16.png');
+    width: 261px;
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+}
+
+.tel{
+    list-style-image: url(../images/whatsapp\ 16.png);
+    width: 155px;
+    position: absolute;
+    right: 45%;
+    bottom: 5px;
+}
+
+.social{
+    list-style-image: url(../images/instagram\ 16.png);
+    width: 150px;
+    position: absolute;
+    left: 75%;
+    bottom: 5px;
+}
+
+footer a:visited{
+    color: black;
+}
+
+/* responsividade */
+
+@media screen and (max-width: 1100px){
+    body{
+        width: 1100px;
+        
+    }
+
+    .navbar{
+        width: 100%;
+    }
+
+}
+    
