@@ -1,355 +1,229 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
     box-sizing: border-box;
+    font-family: 'Prata', serif;
 }
+
+
+
 /* navbar do site */
-.navbar{
+
+nav{
+    background: white;
     width: 100%;
-    color: white;
-    background-color: rgb(243, 243, 243);
-    position: relative;
-    overflow: hidden;
     height: 80px;
-}
-
-.navbar ul{
-    position: absolute;
-    padding-top: 20px;
-    right: 10%;
-
-
-
-}
-
-.navbar li{
-    list-style: none;
-    display: inline-block;
-    font-family: 'Lobster', cursive;
-    font-size: 20px;
-    padding: 10px;
-    list-style: inside;
-
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    text-shadow: 1px 1px 2px;
+    
 }
 
 .logo{
-float: left;
-background-size: 160px 80px;
-background-size: cover;
+    width: 206px;
+    height: 78px;
+    margin-left: 20px;
+   background-image: url(../images/logo\ \(2\).jpeg);
+   background-size: cover;
+   display: inline-block;
+   image-rendering: high-quality;
 }
 
-.navbar a{
-    text-decoration: none;
-    color: rgb(245, 141, 6);
-}
-/* navbar do site */
-
-/* imagem do topo */
-.imagetitle{
-    max-width: 1100px;
-    height: 500px;
-    background-image: url(../images/modelo\ de\ lado.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    margin: auto;
-    position: relative;
-}
-
-.imagetitle h1{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 40px;
-    color: rgb(253, 122, 0);
-    background-color: rgba(0, 0, 0, 0.158);
-
-
-}
-
-.imagetitle p{
-    font-family: 'Baloo Tammudu 2', cursive;
-    padding-bottom: 126px;
-    padding-top: 5px;
-    font-size: 24px;
-    font-weight:bolder;
-    color: rgb(253, 122, 0);
-    background-color: rgba(0, 0, 0, 0.158);
-
-}
-
-h1 {
-    padding-top: 24%;
-    padding-left: 13%;
-}
-
-
-.text{
-    padding-left: 13%;
-}
-
-/* imagem e texto do topo */
-
-/* sobre nós */
-
-.aboutus{
-    max-width: 1100px;
-    height: 300px;
-    margin: auto;
-    position: relative;
-    margin-top: 5px;
-}
-
-.txtabout{
-    width: 50%;
-    height: 250px;
-    padding: 20px;
-    display: inline-block;
-}
-
-.aboutus h2, .aboutus h3, .aboutus p{
-    font-family: 'Domine', serif;
-    padding-top: 10px;
-}
- 
-.aboutus h2{
-    font-size: 35px;
-    padding-bottom: 30px;
-}
-
-.aboutus h3{
-    font-size: 15px;
-    padding-bottom: 5px;
-    color: rgb(253, 122, 0);
-}
-
-.aboutus p{
-
-}
-
-.imgabout{
-    background-image: url(../images/itens.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
+nav ul{
     float: right;
-    width: 50%;
-    height: 300px;
-    margin-top: 5px;
-    margin-bottom: 5px;   
+    margin-right: 20px;
 }
 
-/* sobre nos */
-
-/* div com fotos cabelo e unha */
-
-.imgworks{
-    width: 1100px;
-    height: 320px;
-    position: relative;
-    margin: auto;
-    margin-top: 15px;
-    font-family: 'Domine', serif;
-
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
     
 }
 
-.imgworks a{
-    text-decoration: none;
+nav ul li a{
+    color: rgb(245, 141, 6);
+    font-size: 25px;
+    padding: 7px 13px;
+    border-radius: 4px;
+    font-family: 'Lobster Two', cursive;
 }
 
-.imgworks ul{
-    list-style: none;
-   text-decoration: none;
+nav a:active, a:hover{
+    background-color: rgba(245, 141, 6, 0.342);
+    transition: .5s;
+}
+
+#check{
+    display: none;
+}
+.checkbtn{
+    font-size: 30px;
+    color: rgb(245, 141, 6);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        background-color: whitesmoke;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+
+    }
+
+    a:active, a:hover{
+        background: none;
+
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+}
+    
+
+/* navbar do site */
+
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+.imagetitle{
+    background-image: url(../images/cabelos\ ao\ vento\ grande.jpg);
+    background-position: right;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 85%;
+    position: relative;
+    background-color: rgba(219, 129, 159, 0.842);
+}
+
+h1, .imagetitle p{
+    color: black;
    
 }
 
-.imgworks li{
-    display: inline-block;
+.imagetitle div{
+    width: 100%;
+    height: 500px;
+    
+}
+
+h1{
+    position: absolute;
+    left: 79px;
+    bottom: 145px;
+    width: 255px;
+    font-family: 'Prata', serif;
+    font-weight: lighter;
+    font-size: 40px;
+    line-height: 45px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 1px 4px black;
+    
+}
+
+.aboutus{
+    width: 100%;
+    height: 340px;
+    position: relative;
+
+ }
+
+.txtabout{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    padding: 20px;
+    display: inline-block
+    
+    
+
+}
+
+h2, h3{
+    text-shadow: 1px 1px 2px;
+}
+
+h2{
+    font-size: 30px;
+    line-height: 60px;
+    font-weight: bold;
+    
+}
+
+h3{
+    font-size: 18px;
+    color: rgb(245, 141, 6);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.imgabout{
+    background-image:url(../images/itens.jpg);
     width: 50%;
     height: 300px;
-    text-align: center;
-    margin-top: 5px;    
-
-}
-
-.cabelo{
-    position: absolute;
-    left: 0;
-    top: 5px;
-    background-image: url(../images/cabelo.jpg);
-    background-repeat: no-repeat;
+    float: right;
+    margin: 20px;
     background-size: cover;
-
 }
 
-.cabelo div, .unhas div{
-    position: absolute;
-    bottom: 50%;
-    right: 50%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.363);
-}
-.unhas{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    background-image: url(../images/unhas.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.imgworks{
+    background-color: rgba(219, 129, 159, 0.842);
 
-}
-
-.fade{
-    background-color: rgba(0, 0, 0, 0.041);
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* footer */
-
-footer{
     width: 100%;
-    height: 100px;
-    background-color: rgb(243, 243, 243);
-    margin-top: 5px;
-    font-family: 'Domine', serif;
-    font-weight: bold;
-    position: relative;
-
+    height: 650px;
 }
 
-footer p{
-    font-size: 25px;
-    color: rgb(253, 122, 0);
-    padding-top: 10px;
-    text-align: center;
-}
-
-footer ul{
-    padding: 5px;
-    width: 100%;
-    height: 50px;
-    position: relative;
-    font-size: 16px;
-    
-}
-
-footer a{
-    text-decoration: none;
-    color: black;
-}
-
-footer li{ 
-    margin-right: 10px;
-    width: 300px;
-    height: 30px;
-    padding: 3px;
-    list-style: inside;
-    
-    
-}
-
-.tel, .social{
-    margin-left: 40px;
-}
-
-.location{
-    list-style-image: url('../images/marcador-de-localizacao\ 16.png');
-    width: 261px;
-    position: absolute;
-    bottom: 5px;
-    left: 10%;
-}
-
-.tel{
-    list-style-image: url(../images/whatsapp\ 16.png);
-    width: 155px;
-    position: absolute;
-    right: 45%;
-    bottom: 5px;
-}
-
-.social{
-    list-style-image: url(../images/instagram\ 16.png);
-    width: 150px;
-    position: absolute;
-    left: 75%;
-    bottom: 5px;
-}
-
-footer a:visited{
-    color: black;
-}
-
-/* responsividade */
-
-@media screen and (max-width: 1100px){
-   body{
-     width: 800px;
-   }
-
-   .imgworks{
-       width: 90%;
-       margin: 0;
-
-   }
-
-   .navbar{
-    width: 90%;
-       
-   }
-
-   .imagetitle h1{
-    padding-top: 204px;
-    padding-left: 85px;
-   }
-   .imagetitle p{
-    padding-left: 85px;
-    padding-bottom: 187px;
-}
-
-   }
-
-   .txtabout{
-    width: 335px;
-    
-   }
-
-   .imgabout{
-    width: 58%;
-    height: 300px;
-   }
-
-   .footer {
-       width: 800px;
-       height: 140px;
-       position: relative;
-
-   }
-
-   .footer ul{
-        height: 60px;
-
-
-   }
-   .footer ul li{
-       position: relative;
-       margin: 0;
-       padding: 0;
-   }
+div.polaroid {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: inline-block;
+  }
   
-   .location{
-       position: absolute;
-       left: 15px;
-
-   }
-
-   .tel{
-       position: absolute;
-       left: 262px;
-   }
-
-   .social{
-       position:absolute;
-       left: 460px;
-
-   }
+  div.container {
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
     
+  }
+
+
+
     
