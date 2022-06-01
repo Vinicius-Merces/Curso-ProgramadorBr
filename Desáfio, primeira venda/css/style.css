@@ -58,7 +58,7 @@ nav a:active, a:hover{
     display: none;
 }
 .checkbtn{
-    font-size: 15px;
+    font-size: 25px;
     color: rgb(245, 141, 6);
     float: right;
     line-height: 80px;
@@ -314,7 +314,7 @@ footer a:visited, a:hover{
      #container{
         max-width: 100%;
     }
-
+    
     div.txtabout{
         width: 340px;
         height: 260px;
