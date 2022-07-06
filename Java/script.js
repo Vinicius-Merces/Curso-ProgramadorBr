@@ -33,10 +33,44 @@
 
 // string so trabalha com adição para concatenar
 
+// parseInt() transforma string em número inteiros
+// parseFloat() transforma string em números com casas decimais
 
 
+//Abaixo teste de prompt e alert
+
+// var nome = prompt("Qual seu nome?")
+
+// alert("Bom dia, " + nome) tomar cuidado com a virgula fora da string causa bug no código
+
+// var numero = parseInt (prompt("Digite um número"))
+// var dobro = numero + numero
+
+// alert("O dobro de " + numero + " é " + dobro)
 
 
+//teste de if e else
+// var idade = 36
 
+// if (idade >= 35){
+//     console.log("Pode")
+//     console.log("Qual o seu pedido?")
+// }
 
-console.log() 
+// else if(idade >=18){
+//     console.log("pode")
+//     console.log("Mostre a identidade")
+// }
+// else{
+//     console.log("não pode")
+//     console.log("Volte futuramente")
+// }
+
+// Operador Ternário
+// var idade = 20
+
+// idade >= 18 ? console.log("Pode") : console.log("Não pode!")
+
+// outro exemplo
+// var pode = idade >18 ? "pode" : "não pode!"
+// console.log(pode)
