@@ -6,38 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
     <script>
-       function change(input) {
-            
-            let h1 = document.getElementsByTagName("h1")[0]
-            h1.innerText = input.value;
-       }
+        function onOver(elemento){
+            elemento.style.backgroundColor = "red"
+        }
+        function onOut(elemento){
+            elemento.style.backgroundColor = "aquamarine"
+        }
+        function click(){
 
-       function hide() {
-        let h1 = document.getElementsByTagName("h1") [0]
-        h1.style.display = "none"
-       }
-    </script>    
+            let hide = document.getElementsByClassName("hide")
+            hide.style.display = "inline";
+
+
+        }
+        
+    </script>
 
     <style>
         div{
-            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
             padding: 20px;
             font-size: 2rem;
-            background-color: aqua;
-            color: aliceblue;
         }
+
+        .hide{
+            display:inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
     </style>
 </head>
 
 <body>
-    <h1>Clique em mim</h1>
+  
+  <div onmouseover="onOver(this)" onmouseout="onOut(this)" onclick="click(this)">
+    <p>Use-me</p>
+  </div>
 
-    <input type="text" onchange="change(this)">
+  <div class="hide">
+    <p>Sou um texto oculto</p>
+  </div>
 
-    <div onclick="hide()">
-        click
-    </div>
-    
 </body>
 </html>
