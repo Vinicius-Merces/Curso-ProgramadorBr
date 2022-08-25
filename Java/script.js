@@ -1,38 +1,12 @@
-// Nome do aluno  - nota 1  -  nota 2 - média  - aprovado/reprovado
+var aluno = { nome: "Igor", notas: [7.5, 5.0]}
 
-var nomes = ["Igor", "José", "Maria"];
-var notasA = [7.0, 6.5, 9.5];
-var notasB = [8.0, 7.0, 8.5];
 
-function media(n1, n2){
-    return (n1 + n2) / 2;
-}
+var novaProp = "LastName"
 
-function passou(media){
-    if(media > 7){
-    return "Aprovado";
-    }
-    else{
-        return "Reprovado";
-    }
-}
+aluno.matricula = 12345;
 
-for (var index in nomes) {
+aluno[novaProp] = "Oliveira";
 
-    var nota1 = notasA[index];
-    var nota2 = notasB[index];
+console.log(aluno)
 
-    var m = media(nota1, nota2);
 
-    
-    console.log(nomes[index] + 
-         " - " + 
-         nota1 + 
-         " - "  + 
-         nota2 + 
-         " - " +
-        m +
-        " - " +
-        passou(m)
-     );
-}
