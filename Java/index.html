@@ -14,46 +14,61 @@
         function onOut(elemento){
             elemento.style.backgroundColor = "aquamarine"
         }
-        function click(){
-
-            let hide = document.getElementById("hide")
-            hide.style.display = "inline-block";
-
+        function show (event) {
+            let c = event.detail;
+            document.getElementById("box").value = c;
+            if (c > 5) {
+            let img = document.getElementsByTagName("section") [0]
+            img.style.display = "inline-block";
+            let btn = document.getElementsByTagName("button")[0]
+            btn.style.display = "none";
 
         }
-        
-    </script>
+    }
+
+       </script>
 
     <style>
-        div{
-            width: 100px;
-            height: 100px;
+        body{
+            width: 1000px;
+            margin: auto;
+        }
+
+        button{
+            display: inline-block;
+            margin-left: 50%;
+            margin-top: 20%;
             background-color: aquamarine;
             padding: 20px;
             font-size: 2rem;
         }
 
-        #hide{
+        section {
             display: none;
-            width: 100px;
-            height: 100px;
-            background-color: gray;
+            margin-left: 10%;
             padding: 20px;
-            font-size: 1.2rem;
+            font-size: 2rem;
+            width: 200px;
+            height: 200px;
         }
+
+        input{
+            display: none;
+        }
+        
 
     </style>
 </head>
 
 <body>
   
-  <div onmouseover="onOver(this)" onmouseout="onOut(this)" onclick="click(this)">
-    <p>Use-me</p>
-  </div>
-
-  <div id="hide">
-    <p>Sou um texto oculto</p>
-  </div>
+  <button onmouseover="onOver(this)" onmouseout="onOut(this)" onclick="show(event)">
+    Use-me
+  </button>
+  <input id="box" type="text">
+  <section>
+    <img src="./img/meme.jpg" alt="meme img">
+  </section>
 
 </body>
 </html>
