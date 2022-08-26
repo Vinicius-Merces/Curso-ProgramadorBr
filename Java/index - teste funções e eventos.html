@@ -17,8 +17,17 @@
         function show (event) {
             let c = event.detail;
             document.getElementById("box").value = c;
-            if (c > 5) {
-            let img = document.getElementsByTagName("section") [0]
+            if (c > 3 ) {
+                let btn = document.getElementsByTagName("button")[0].textContent = "Isso aí!"
+            }
+            if (c > 7) {
+                let btn = document.getElementsByTagName("button")[0].textContent = "Isso, vai!"
+            }
+            if (c > 10){
+                let btn = document.getElementsByTagName("button")[0].textContent = "Quase lá!!!"
+            }
+            if (c > 15) {
+            let img = document.getElementsByTagName("section")[0]
             img.style.display = "inline-block";
             let btn = document.getElementsByTagName("button")[0]
             btn.style.display = "none";
@@ -36,6 +45,7 @@
 
         button{
             display: inline-block;
+            border-radius: 10px;
             margin-left: 50%;
             margin-top: 20%;
             background-color: aquamarine;
@@ -62,7 +72,7 @@
 
 <body>
   
-  <button onmouseover="onOver(this)" onmouseout="onOut(this)" onclick="show(event)">
+  <button class="btn" onmouseover="onOver(this)" onmouseout="onOut(this)" onclick="show(event)">
     Use-me
   </button>
   <input id="box" type="text">
