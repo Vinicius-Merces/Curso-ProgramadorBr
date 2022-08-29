@@ -13,36 +13,63 @@
       let user = localStorage.getItem("nome");
       let h1 = document.getElementById("title");
       h1.innerHTML = "Sr(a)." + user;
+
+      if (user = true) {
+        let input = document.getElementById("myInput");
+        let btn = document.getElementById("btn");
+        input.style.display = "none";
+        btn.style.display = "inline-block";
+      }
     }
-    
-
     function nome(element) {
-      let name = element.value;
+      var name = element.value;
       let h1 = document.getElementById("title");
-      h1.innerHTML = "Sr(a)." + name;
       localStorage.setItem ("nome", name);
+      h1.innerHTML = "Sr(a)." + name;
+    }
+    function alterar(element){
+      let input = document.getElementById("myInput");
+      let btn = element;
+      let btn2 = document.getElementById("btn2");
+      input.style.display = "inline-block";
+      btn.style.display = "none";
+      btn2.style.display = "inline-block";
      }
-
+     function save(element){
+      let save = element;
+      let input = document.getElementById("myInput");
+      let btn = document.getElementById("btn");
+      input.style.display = "none";
+      btn.style.display = "inline";
+      save.style.display = "none";
+     }
     // pode usar o JSON.stringfy() para armezar objetos e o JSON.parse() 
     // para torner as strings armazenadas em objetos JS
     
     </script>
 
     <style>
-      
-        
+      #btn {
+        display: none;
+      }
+      #btn2 {
+        display: none;
+      }
 
     </style>
 </head>
 
 <body>
   <h1 id="title"></h1>
-  <input type="text" id="myInput" oninput="nome(this)">
+  <input type="text" id="myInput" oninput="nome(this)" onent>
   
+  <button id="btn" onclick="alterar(this)">
+    Mudar nome
+  </button>
+  <button id="btn2" onclick="save(this)">
+    Salvar
+  </button>
+
 </body>
-
-
-    
-
 
 </html>
