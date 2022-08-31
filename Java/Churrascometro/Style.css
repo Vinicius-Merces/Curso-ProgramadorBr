@@ -1,6 +1,6 @@
 body {
     position: relative;
-    width: 100%;
+    width: 1000px;
     height: 880px;
     margin-left: 15%;
     
@@ -69,34 +69,18 @@ input{
     top: 50%;
 }
 
-/* #resultado {
-    font-size: 2rem;
-    left: 795px;
-    top: 358px;
-    width: 475px;
-    position: relative;
-    box-sizing: border-box;
-    background-color: rgb(132, 194, 223);
-    border-radius: 11% 30% 0 11%;
-    
-}
-#resultado p{
-    margin: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 5px;
-} */
-
 #resultado{
     background: rgb(132, 194, 223);
     font-size: 2rem;
     line-height: 1.6em;
     border-radius: 15px;
+    width: 300px;
     height: auto;
     color: #fff;
     position: absolute;
     margin-top: 30px;
     left: 1138px;
-    top: 130px;
+    top: 250px;
     width: 475px;
     
 }
@@ -132,7 +116,7 @@ input{
     margin-top: 30px;
     top: 224px;
     left: 850px;
-    display: "";
+    display: block;
     
 }
 .balao:after{ /*Triangulo*/
@@ -148,7 +132,6 @@ input{
 }
 
     
-
 
 
 

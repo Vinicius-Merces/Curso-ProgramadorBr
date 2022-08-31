@@ -27,10 +27,8 @@ function calcular(){
     resultado.innerHTML += `<p>${Math.ceil(qtdTotalCerveja/355)} Latas(355ml) de Cerveja</p>`
     resultado.innerHTML += `<p>${Math.ceil(qtdTotalBebidas/2000)} Garrafas(2L) de Bebidas</p>`
 
-    if(qtdTotalBebidas >=0 ){
-        let balao = document.getElementsByClassName("balao").style.display="none";
-        
-    }
+    resultado.style.fontSize = "2rem";
+    resultado.style.lineHeight = "0.6em";
 }
 
 
