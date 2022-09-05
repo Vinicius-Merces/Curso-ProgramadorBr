@@ -10,6 +10,7 @@ body{
     height: 100px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
    
   }
 
@@ -19,6 +20,7 @@ body{
     height: 120px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 
   }
 
@@ -32,6 +34,7 @@ body{
     border-radius: 10px;
     display: flex;
     flex-flow: column;
+    justify-content: center;
     height: 100px;
   }
 
