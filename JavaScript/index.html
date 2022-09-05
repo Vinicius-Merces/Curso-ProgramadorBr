@@ -11,9 +11,33 @@
 
 <body>
   <div class="back">
-  <input id="txtNumeros" type="text" placeholder="Digite os números separados por vírgula">
-  <button id="calcular" onclick="idades(this)">Verificar</button> 
-  <button id="limpar" onclick="clearData(this)">Limpar</button>
+    <div  class="box">
+    <select name="Sexo" id="pessoa1 Sexo">
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+    <input id="pessoa1 Idade" type="number" placeholder="Idade">
+    <input id="pessoa1 Altura" type="number" placeholder="Altura">
+    </div>
+    <div class="box">
+    <select name="Sexo" id="pessoa2 Sexo">
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+    <input id="pessoa2 Idade" type="number" placeholder="Idade">
+    <input id="pessoa2 Altura" type="number" placeholder="Altura">
+    </div>
+    <div class="box">
+      <select name="Sexo" id="pessoa3 Sexo">
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+      </select>
+    <input id="pessoa3 Idade" type="number" placeholder="Idade">
+    <input id="pessoa3 Altura" type="number" placeholder="Altura">
+    </div>
+  
+    <button id="calcular" onclick="verificarTipos(this)">Verificar</button> 
+    <button id="limpar" onclick="clearData(this)">Limpar</button>
   </div>
 
   <script src="./script.js"></script>
