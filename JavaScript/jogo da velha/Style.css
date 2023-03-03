@@ -1,13 +1,13 @@
-h1{
+h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.stage{
+.stage {
     text-align: center;
 }
 
-.square{
+.square {
     width: 100px;
     height: 100px;
     background-color: beige;
@@ -15,11 +15,11 @@ h1{
     display: inline-block;
 }
 
-.o{
+.o {
     position: relative;
 }
 
-.o:after{
+.o:after {
     position: absolute;
     content: "\1F383";
     font-size: 50px;
@@ -30,11 +30,11 @@ h1{
     right: 0;
 }
 
-.x{
+.x {
     position: relative;
 }
 
-.x:after{
+.x:after {
     position: absolute;
     content: "\2620";
     font-size: 50px;
@@ -43,4 +43,45 @@ h1{
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.btn {
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    background-color: orange;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+button:hover {
+    background-color: black;
+    color: orange;
+    box-shadow: none;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.dicas {
+    text-align: center;
+    display: block;
+    background-color: antiquewhite;
+    position: relative;
+    width: 200px;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    bottom: 280px;
+    left: 3%;
 }
