@@ -2,7 +2,8 @@ body {
     position: relative;
     width: 1000px;
     height: 860px;
-    overflow: hidden;    
+    overflow: hidden;  
+    margin: 3%;  
     
 }
 
