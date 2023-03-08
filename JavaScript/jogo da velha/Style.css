@@ -15,6 +15,14 @@ h1 {
     display: inline-block;
 }
 
+.square:hover{
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(85, 5, 5, 0.3);
+
+}
+
 .o {
     position: relative;
 }
@@ -84,4 +92,8 @@ button:active {
     border-radius: 5px;
     bottom: 280px;
     left: 3%;
+}
+
+.dicas:hover {
+    box-shadow: 3px 3px 5px rgba(230, 3, 3, 0.3);
 }
