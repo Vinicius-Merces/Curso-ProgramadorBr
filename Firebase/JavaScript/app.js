@@ -14,32 +14,65 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const TURMA = "turmaA";
+
 let db = firebase.firestore();
 
+
+// db.collection(TURMA).add({
+//     nome:"Marcos",
+//     sobrenome:"Santos",
+//     notas: {nota1:9.6, nota2: 7.5},
+// }).then((doc)=> {
+//     console.log("Documento inserido com sucesso:", doc);
+// }).catch(err=> {
+//     console.log(err);
+// })
+
+// db.collection(TURMA).doc("AlunoNovo").set({
+//     nome:"Mariana",
+//     sobrenome:"Santos",
+//     notas: {nota1:9.6, nota2: 7.5},
+// }).then((doc)=> {
+//     console.log("Documento inserido com sucesso:");
+//     }).catch(err=> {
+//         console.log(err);
+//     })
+
+
+    // db.collection(TURMA).doc("AlunoNovo").update(
+    //     {
+    //         cidades: firebase.firestore.FieldValue.arrayRemove("Paraná")
+    //     }
+    // ).then((doc)=> {
+    //         console.log("Documento inserido com sucesso:");
+    //         }).catch(err=> {
+    //             console.log(err);
+    //         })
+
+
 //Ler todos os dados de uma coleção
-// db.collection("turmaA").get()
-//                             .then((snapshot)=>{
+db.collection("turmaA").onSnapshot((snapshot)=>{
 
-//                                 snapshot.forEach((doc)=>{
-//                                     let aluno = doc.data();
-//                                     console.log(aluno.nome);
-//                                     console.log(aluno.Notas);
-
-//                             })
-//                         })
-
-// let docRef = db.collection("turmaA").doc("c8eqhrCwDM5frKHx3Mao");
-
-// docRef.get().then((doc) => {
-//     // let aluno = doc.data();
-//     console.log(doc.data().nome);
-// });
-
-
-
-db.collection("turmaA").where("nome", "!=", "José").get().then((snapshot => {
-    snapshot.forEach((doc) => {
+    snapshot.forEach((doc)=>{
         let aluno = doc.data();
-        console.log(aluno.nome, aluno.sobrenome);
-    })
-}));
+        console.log(aluno);
+})
+})
+    
+
+let docRef = db.collection("turmaA").doc("c8eqhrCwDM5frKHx3Mao");
+
+docRef.onSnapshot((doc) => {
+    let aluno = doc.data();
+    console.log(doc.data());
+});
+
+
+
+// db.collection("turmaA").where("nome", "!=", "José").get().then((snapshot => {
+//     snapshot.forEach((doc) => {
+//         let aluno = doc.data();
+//         console.log(aluno.nome, aluno.sobrenome);
+//     })
+// }));
