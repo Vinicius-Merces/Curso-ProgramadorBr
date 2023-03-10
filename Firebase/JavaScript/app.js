@@ -13,10 +13,167 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 const TURMA = "turmaA";
-
 let db = firebase.firestore();
+let auth = firebase.auth();
+
+// botoes para logar e sair
+let loginBtn = document.getElementById("login");
+let logoutBtn = document.getElementById("logout");
+loginBtn.addEventListener("click", login);
+logoutBtn.addEventListener("click", logout);
+const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+if (areaDeLogin) {
+  areaDeLogin.style.display = "block";
+} else {
+  console.log("Elemento area-de-login não encontrado na página");
+}
+
+
+//função para criar os usuários
+
+function criarUsuario() {
+
+let newUserEmail = "vmerces24@gmail.com";
+let newUserPassword = "123456";
+
+// Criar usuarios
+auth.createUserWithEmailAndPassword(newUserEmail, newUserPassword)
+  .then((userCredential) => {
+    var user = userCredential.user;
+    console.log("Usuário criado com sucesso:", user);
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log("Error: " + errorCode + " - " + errorMessage);
+  })
+
+}
+
+//função para login
+
+function login(){
+    let userEmail = document.getElementById("login-email");
+    let userPassword = document.getElementById("password");
+    const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+    if (areaDeLogin) {
+      areaDeLogin.style.display = "none";
+    } else {
+      console.log("Elemento area-de-login não encontrado na página");
+    }
+    
+
+    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() =>{
+        auth.signInWithEmailAndPassword(userEmail.value, userPassword.value)
+        .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        console.log("Usuário logado com sucesso:", user.email)
+      }).catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("Error: " + errorCode + " - " + errorMessage);})
+      }).catch((error) => {
+        console.log(error);
+    })
+
+}
+
+// Listener com callback para ver o estado do usuario atual
+auth.onAuthStateChanged(user=> {
+    if (user) {
+        //mostrar o usuario logado na tela
+        
+        const userLogged = document.getElementsByClassName("logged-user");
+        userLogged[0].innerHTML = "Usuário logado:" + " " + auth.currentUser.email;
+        const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+        if (areaDeLogin) {
+          areaDeLogin.style.display = "none";
+        }
+        // mostrar o botão login se  não houver usuário logado
+        const btnEntrar = document.getElementById("login");
+        if (btnEntrar) {
+          btnEntrar.style.display = "none";
+        }
+        const btnSair = document.getElementById("logout");
+        if (btnSair) {
+            btnSair.style.display = "block";            
+        }
+        const buttons = document.getElementsByClassName("buttons");
+        if (buttons) {
+            buttons[0].style.display = "flex";
+            buttons[0].style.justifyContent = "flex-end";
+        }
+    } else {
+        // mostrar a area de login se não houver usuário logado
+        const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+        if (areaDeLogin) {
+          areaDeLogin.style.display = "block";
+        }
+        // mostrar o botão login se  não houver usuário logado
+        const btnEntrar = document.getElementById("login");
+        if (btnEntrar) {
+          btnEntrar.style.display = "block";
+        }
+        const btnSair = document.getElementById("logout");
+        if (btnSair) {
+          btnSair.style.display = "none";
+        }
+        const buttons = document.getElementsByClassName("buttons");
+        if (buttons) {
+            buttons[0].style.display = "flex";
+            buttons[0].style.justifyContent = "flex-start";
+        }
+        console.log("Usuário não logado");
+    }
+})
+
+
+//função para logout
+
+function logout() {
+    const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+    if (areaDeLogin) {
+      areaDeLogin.style.display = "block";
+    } else {
+      console.log("Elemento area-de-login não encontrado na página");
+    }
+
+
+    auth.signOut().then(()=> {
+
+        const userLogged = document.getElementsByClassName("logged-user");
+        userLogged[0].innerHTML = "Usuário foi deslogado";
+    }).catch(error => {
+        console.log(error);
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // db.collection(TURMA).add({
@@ -52,21 +209,21 @@ let db = firebase.firestore();
 
 
 //Ler todos os dados de uma coleção
-db.collection("turmaA").onSnapshot((snapshot)=>{
+// db.collection("turmaA").onSnapshot((snapshot)=>{
 
-    snapshot.forEach((doc)=>{
-        let aluno = doc.data();
-        console.log(aluno);
-})
-})
+//     snapshot.forEach((doc)=>{
+//         let aluno = doc.data();
+//         console.log(aluno);
+// })
+// })
     
 
-let docRef = db.collection("turmaA").doc("c8eqhrCwDM5frKHx3Mao");
+// let docRef = db.collection("turmaA").doc("c8eqhrCwDM5frKHx3Mao");
 
-docRef.onSnapshot((doc) => {
-    let aluno = doc.data();
-    console.log(doc.data());
-});
+// docRef.onSnapshot((doc) => {
+//     let aluno = doc.data();
+//     console.log(doc.data());
+// });
 
 
 

@@ -9,10 +9,25 @@
   </head>
   <body>
     
+    <div class="logged-user">    </div>
+
+    <div class="area-de-login">
+      
+      <input id="login-email" type="text" placeholder="E-mail de login">
+     
+      <input id="password" type="password" placeholder="Senha de acesso">
+    </div>
+
+    <div class="buttons">
+    <button id="login">Entrar</button>
+    <button id="logout">Sair</button>
+    </div>
+
+
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="./JavaScript/app.js"></script>
   </body>
 </html>

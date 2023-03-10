@@ -1,0 +1,44 @@
+body  {
+    width: 1000px;
+    display: grid;
+    justify-content: center;
+    
+    
+}
+
+.logged-user {
+    margin-top: 15px;
+    margin: 5px;
+    display: flex;
+    
+}
+
+.area-de-login {
+    display: none;
+    padding-top: 50px;
+    margin: 5px;
+    width: 300px;
+}
+
+#login-email{
+    display: flex;
+    margin: 5px;
+
+}
+
+#password {
+    display: flex;
+    margin: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#logout {
+    display: none;
+}
