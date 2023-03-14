@@ -29,19 +29,27 @@ if (areaDeLogin) {
   console.log("Elemento area-de-login não encontrado na página");
 }
 
+//botão de cadastro
+const btnCad = document.getElementById("register");
+btnCad.addEventListener("click", criarUsuario);
+
 
 //função para criar os usuários
 
 function criarUsuario() {
 
-let newUserEmail = "vmerces24@gmail.com";
-let newUserPassword = "123456";
+let newUserEmail = document.getElementById("new-login-email");
+let newUserPassword = document.getElementById("new-password");
 
 // Criar usuarios
-auth.createUserWithEmailAndPassword(newUserEmail, newUserPassword)
-  .then((userCredential) => {
-    var user = userCredential.user;
-    console.log("Usuário criado com sucesso:", user);
+auth.createUserWithEmailAndPassword(newUserEmail.value, newUserPassword.value)
+  .then((newuserCredential) => {
+    var newUser = newuserCredential.user;
+    console.log("Usuário craido com sucesso:", newUser.email)
+
+    const userCreated = document.getElementsByClassName("created-user");
+    userCreated[0].innerHTML = "Usuário criado:" + " " + newUser.email;
+    
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -68,8 +76,8 @@ function login(){
         auth.signInWithEmailAndPassword(userEmail.value, userPassword.value)
         .then((userCredential) => {
         // Signed in
-        var user = userCredential.user;
-        console.log("Usuário logado com sucesso:", user.email)
+        var logUser = userCredential.user;
+        console.log("Usuário logado com sucesso:", logUser.email)
       }).catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;

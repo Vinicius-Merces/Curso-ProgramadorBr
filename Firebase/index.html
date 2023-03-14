@@ -8,22 +8,40 @@
     <link rel="stylesheet" href="./Style/style.css" />
   </head>
   <body>
-    
-    <div class="logged-user">    </div>
+    <div class="login">
+      <div class="logged-user"></div>
 
-    <div class="area-de-login">
-      
-      <input id="login-email" type="text" placeholder="E-mail de login">
-     
-      <input id="password" type="password" placeholder="Senha de acesso">
+      <div class="area-de-login">
+        <input id="login-email" type="text" placeholder="E-mail de login" />
+
+        <input id="password" type="password" placeholder="Senha de acesso" />
+      </div>
+      <div class="buttons">
+        <button id="login">Entrar</button>
+        <button id="logout">Sair</button>
+      </div>
     </div>
 
-    <div class="buttons">
-    <button id="login">Entrar</button>
-    <button id="logout">Sair</button>
+    <div class="create">
+      <div class="created-user"></div>
+
+      <div class="register-area">
+        <input
+          id="new-login-email"
+          type="text"
+          placeholder="E-mail de cadastro"
+        />
+
+        <input
+          id="new-password"
+          type="password"
+          placeholder="Senha de acesso"
+        />
+      </div>
+      <div class="buttons">
+        <button id="register">Cadastrar</button>
+      </div>
     </div>
-
-
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>

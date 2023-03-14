@@ -1,10 +1,20 @@
 body  {
     width: 1000px;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    margin: auto;
+    flex-wrap: nowrap;
     
     
 }
+
+
+
+.login, .create{
+    display: grid;
+    justify-content: center;
+    margin: 5%
+}
+
 
 .logged-user {
     margin-top: 15px;
@@ -13,22 +23,23 @@ body  {
     
 }
 
-.area-de-login {
+.area-de-login  {
     display: none;
     padding-top: 50px;
     margin: 5px;
     width: 300px;
 }
 
-#login-email{
+#login-email, #new-login-email{
     display: flex;
     margin: 5px;
 
 }
 
-#password {
+#password, #new-password {
     display: flex;
     margin: 5px;
+    margin-top: 5px;
 }
 
 .buttons {
@@ -37,8 +48,16 @@ body  {
     margin: 5px;
     padding: 10px;
     justify-content: space-between;
+    align-items: baseline;
 }
 
 #logout {
     display: none;
+}
+
+
+.register-area {
+    padding-top: 50px;
+    margin: 5px;
+    width: 300px;
 }
