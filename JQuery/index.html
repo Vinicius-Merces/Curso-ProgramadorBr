@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <style>
+      #square {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+        position: absolute;
+      }
+
+      #green {
+        width: 300px;
+        height: 300px;
+        background-color: green;
+        position: absolute;
+        display: none;
+      }
+
+      #button,
+      #button2 {
+        border-radius: 5px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo">Esse é um título</h1>
+
+    <h1 id="sair" style="display: none">Não saia, por favor ;-;</h1>
+
+    <button id="button">Animate</button>
+    <button id="button2">stop</button>
+
+    <div id="green"></div>
+    <div id="square"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+      //   $(".titulo").hide();
+
+      //   setTimeout(() => {
+      //     $(".titulo").show();
+      //   }, 2000);
+
+       //vanilla
+      // document.querySelectorAll(".titulo").forEach(elemento => {
+      //     elemento.style.display = "none";
+      // });
+
+
+      $(document).mouseleave(() => {
+          $("#sair").show();
+          $(".titulo").remove();
+      });
+
+      $("#button").click(() => {
+        $("#square").animate({width: 500, height: 500},3000);
+      })
+
+      $("#button2").click(() => {
+        $("#square").hide(2000, () => {
+          $("#green").show(2000)
+        });
+      })
+    </script>
+  </body>
+</html>
