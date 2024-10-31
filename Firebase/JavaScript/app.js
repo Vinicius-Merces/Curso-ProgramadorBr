@@ -59,83 +59,108 @@ auth.createUserWithEmailAndPassword(newUserEmail.value, newUserPassword.value)
 
 }
 
-//função para login
-
-function login(){
-    let userEmail = document.getElementById("login-email");
-    let userPassword = document.getElementById("password");
-    const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
-    if (areaDeLogin) {
+// Função para login
+function login() {
+  let userEmail = document.getElementById("login-email");
+  let userPassword = document.getElementById("password");
+  
+  // Ocultar a área de login
+  const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+  if (areaDeLogin) {
       areaDeLogin.style.display = "none";
-    } else {
+  } else {
       console.log("Elemento area-de-login não encontrado na página");
-    }
-    
+  }
 
-    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() =>{
-        auth.signInWithEmailAndPassword(userEmail.value, userPassword.value)
-        .then((userCredential) => {
-        // Signed in
-        var logUser = userCredential.user;
-        console.log("Usuário logado com sucesso:", logUser.email)
-      }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log("Error: " + errorCode + " - " + errorMessage);})
-      }).catch((error) => {
-        console.log(error);
-    })
+  // Ocultar a área de criação de usuário
+  const areaDeCreateUser = document.getElementsByClassName("register-area")[0];
+  if (areaDeCreateUser) {
+      areaDeCreateUser.style.display = "none";
+  } else {
+      console.log("Elemento register-area não encontrado na página");
+  }
 
+  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
+      auth.signInWithEmailAndPassword(userEmail.value, userPassword.value)
+      .then((userCredential) => {
+          // Signed in
+          var logUser = userCredential.user;
+          console.log("Usuário logado com sucesso:", logUser.email);
+      }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log("Error: " + errorCode + " - " + errorMessage);
+      });
+  }).catch((error) => {
+      console.log(error);
+  });
 }
 
+
 // Listener com callback para ver o estado do usuario atual
-auth.onAuthStateChanged(user=> {
-    if (user) {
-        //mostrar o usuario logado na tela
-        
-        const userLogged = document.getElementsByClassName("logged-user");
-        userLogged[0].innerHTML = "Usuário logado:" + " " + auth.currentUser.email;
-        const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
-        if (areaDeLogin) {
+auth.onAuthStateChanged(user => {
+  if (user) {
+      // Mostrar o usuário logado na tela
+      const userLogged = document.getElementsByClassName("logged-user");
+      userLogged[0].innerHTML = "Usuário logado:" + " " + auth.currentUser.email;
+
+      // Ocultar a área de login
+      const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+      if (areaDeLogin) {
           areaDeLogin.style.display = "none";
-        }
-        // mostrar o botão login se  não houver usuário logado
-        const btnEntrar = document.getElementById("login");
-        if (btnEntrar) {
+      }
+
+      // Ocultar a área de criação de usuário
+      const areaDeCreateUser = document.getElementsByClassName("register-area")[0];
+      if (areaDeCreateUser) {
+          areaDeCreateUser.style.display = "none"; // Adicione esta linha
+      }
+
+      // Mostrar o botão de login se não houver usuário logado
+      const btnEntrar = document.getElementById("login");
+      if (btnEntrar) {
           btnEntrar.style.display = "none";
-        }
-        const btnSair = document.getElementById("logout");
-        if (btnSair) {
-            btnSair.style.display = "block";            
-        }
-        const buttons = document.getElementsByClassName("buttons");
-        if (buttons) {
-            buttons[0].style.display = "flex";
-            buttons[0].style.justifyContent = "flex-end";
-        }
-    } else {
-        // mostrar a area de login se não houver usuário logado
-        const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
-        if (areaDeLogin) {
+      }
+      const btnSair = document.getElementById("logout");
+      if (btnSair) {
+          btnSair.style.display = "block";            
+      }
+      const buttons = document.getElementsByClassName("buttons");
+      if (buttons) {
+          buttons[0].style.display = "flex";
+          buttons[0].style.justifyContent = "flex-end";
+      }
+  } else {
+      // Mostrar a área de login se não houver usuário logado
+      const areaDeLogin = document.getElementsByClassName("area-de-login")[0];
+      if (areaDeLogin) {
           areaDeLogin.style.display = "block";
-        }
-        // mostrar o botão login se  não houver usuário logado
-        const btnEntrar = document.getElementById("login");
-        if (btnEntrar) {
+      }
+
+      // Mostrar a área de criação de usuário se não houver usuário logado
+      const areaDeCreateUser = document.getElementsByClassName("register-area")[0];
+      if (areaDeCreateUser) {
+          areaDeCreateUser.style.display = "block"; // Adicione esta linha
+      }
+
+      // Mostrar o botão de login se não houver usuário logado
+      const btnEntrar = document.getElementById("login");
+      if (btnEntrar) {
           btnEntrar.style.display = "block";
-        }
-        const btnSair = document.getElementById("logout");
-        if (btnSair) {
+      }
+      const btnSair = document.getElementById("logout");
+      if (btnSair) {
           btnSair.style.display = "none";
-        }
-        const buttons = document.getElementsByClassName("buttons");
-        if (buttons) {
-            buttons[0].style.display = "flex";
-            buttons[0].style.justifyContent = "flex-start";
-        }
-        console.log("Usuário não logado");
-    }
-})
+      }
+      const buttons = document.getElementsByClassName("buttons");
+      if (buttons) {
+          buttons[0].style.display = "flex";
+          buttons[0].style.justifyContent = "flex-start";
+      }
+      console.log("Usuário não logado");
+  }
+});
+
 
 
 //função para logout
